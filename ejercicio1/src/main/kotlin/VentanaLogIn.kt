@@ -4,8 +4,9 @@ import org.uqbar.arena.widgets.*
 import org.uqbar.arena.windows.SimpleWindow
 import org.uqbar.arena.windows.WindowOwner
 import org.uqbar.lacar.ui.model.Action
+import java.awt.Color
 
-class Ventana: SimpleWindow<Login> {
+class VentanaLogIn: SimpleWindow<Login> {
 
     constructor(owner: WindowOwner,model: Login ): super (owner,model)
 
@@ -34,11 +35,13 @@ class Ventana: SimpleWindow<Login> {
         if (operacion()) {
             Label(p0) with {
                 text = "True"
+                bgColor = Color.GREEN
             }
         }
         else {
-            Label(p0) with {
+            Label(p0) with {    
                 text = "False"
+                bgColor = Color.RED
             }
         }
     }

@@ -6,8 +6,7 @@ import org.uqbar.arena.windows.Window
 
 class Aplicacion: Application() {
     override fun createMainWindow(): Window<*> {
-         var login: Login = Login()
-        return Ventana(this,login)
+        return VentanaLogIn(this,Login())
     }
 }
 
