@@ -19,7 +19,7 @@ class LogInTest {
         login.setearName("lean")
         login.setearPass("1234")
         sistema.agregarUsuario(user)
-        assertTrue(login.autenticar())
+        assertTrue((login.sist).usuarios.contains(user))
     }
 
 

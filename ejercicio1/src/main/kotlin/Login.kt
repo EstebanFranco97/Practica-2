@@ -8,7 +8,6 @@ class Login {
     var userName: String = ""
     var passWord: String = ""
 
-
     fun esUsuarioQueBusco(user :User) = (user.name == userName) && (user.passWord ==passWord)
 
     fun setearName (usrName : String){
@@ -18,8 +17,10 @@ class Login {
         passWord = usrPass
     }
 
-    fun autenticar(): Boolean{
+    fun autenticar():Boolean {
 
         return (sist.usuarios).any { esUsuarioQueBusco(it) }
     }
+
+
 }

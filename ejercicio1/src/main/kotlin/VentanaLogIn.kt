@@ -4,48 +4,48 @@ import org.uqbar.arena.widgets.*
 import org.uqbar.arena.windows.SimpleWindow
 import org.uqbar.arena.windows.WindowOwner
 import org.uqbar.lacar.ui.model.Action
-import java.awt.Color
 
 class VentanaLogIn: SimpleWindow<Login> {
 
-    constructor(owner: WindowOwner,model: Login ): super (owner,model)
+    constructor(owner: WindowOwner, model: Login) : super(owner, model)
 
     override fun addActions(p0: Panel?) {
+        if (modelObject.autenticar()){
+            Label(p0) with {
+                text = "UserName"
+            }
+        }
+        else{
+            Label(p0) with {
+                text = "hola"
+            }
+        }
     }
 
     override fun createFormPanel(p0: Panel?) {
-      title = "Insert your userName and password"
-        Label(p0)with { text ="UserName"
+        title = "Insert your userName and password"
+        Label(p0) with {
+            text = "UserName"
         }
-        TextBox(p0)with { bindTo("userName")
+        TextBox(p0) with {
+            bindTo("userName")
             width = 100
         }
-        Label(p0)with { text ="PassWord"
+        Label(p0) with {
+            text = "PassWord"
         }
-        PasswordField(p0)with {
+        PasswordField(p0) with {
             bindTo("passWord")
             width = 100
         }
-        Button(p0)with {
+        Button(p0) with {
             caption = "Autenticar"
-            onClick(Action { autenticarU(p0)})
+            onClick(Action { addActions(p0) })
         }
-    }
-    private  fun autenticarU (p0: Panel?) {
-        if (operacion()) {
-            Label(p0) with {
-                text = "True"
-                bgColor = Color.GREEN
-            }
-        }
-        else {
-            Label(p0) with {    
-                text = "False"
-                bgColor = Color.RED
-            }
-        }
-    }
-    private  fun operacion(): Boolean {
-        return modelObject.autenticar()
-    }
+
+     }
+
+
+
 }
+
